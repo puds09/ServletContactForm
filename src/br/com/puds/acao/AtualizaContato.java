@@ -1,18 +1,20 @@
-package br.com.puds;
+package br.com.puds.acao;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/AtualizarContato")
-public class AtualizarContatoServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+import br.com.puds.modelo.Banco;
+import br.com.puds.modelo.Contato;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class AtualizaContato implements Acao {
+
+	@Override
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String nomeCliente = request.getParameter("name");
 		String emailCliente = request.getParameter("email");
 		String telefoneCliente = request.getParameter("phone");
@@ -34,7 +36,8 @@ public class AtualizarContatoServlet extends HttpServlet {
 		contato.setTelefone(telefoneCliente);
 		contato.setMensagem(mensagemCliente);
 		
-		response.sendRedirect("listaContatos");
+//		response.sendRedirect("listaContatos");
+		return "redirect:entrada?acao=ListaContato";
 	}
 
 }

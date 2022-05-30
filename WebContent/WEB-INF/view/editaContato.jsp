@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:url value="/AtualizarContato" var="linkServletForms"/>
+<c:url value="/entrada?acao=AtualizaContato" var="linkServletForms"/>
 
 
 <!DOCTYPE html>
@@ -33,6 +33,7 @@
         </div>
         <!-- formulario para contato -->
         <div class="right-side" id="right-side">
+			<c:import url="logout-parcial.jsp" />
             <h2>Nos mande uma mensagem!</h2>
             <form action="${linkServletForms}" id="contact-form" method="post">
                 <label for="name">Nome:</label>

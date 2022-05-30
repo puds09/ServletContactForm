@@ -1,5 +1,5 @@
 
-package br.com.puds;
+package br.com.puds.modelo;
 
 
 public class Contato {

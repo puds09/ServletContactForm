@@ -34,11 +34,12 @@
         </div>
         <!-- formulario para contato -->
         <div class="right-side" id="right-side">
+   			<c:import url="logout-parcial.jsp" />
             <h2>Contatos Recebidos:</h2>
 				<c:forEach items="${ contatos }" var="contato">
 				<div style="display: flex; width: 100%; justify-content: start; margin: 5px">
-					<a href="/PaginaDeContato/EditaContato?id=${contato.getId() }" style="margin-right: 5px">Editar</a>
-					<a href="/PaginaDeContato/RemoveContato?id=${contato.getId() }" >Remover</a>
+					<a href="/PaginaDeContato/entrada?acao=EditaContato&id=${contato.getId() }" style="margin-right: 5px">Editar</a>
+					<a href="/PaginaDeContato/entrada?acao=RemoverContato&id=${contato.getId() }" >Remover</a>
 				</div>
 				<ul class="list" style="margin: 12px; text-align: left">
 					<li class="list-item" style="margin:2px">Nome:  ${ contato.getNome() }		</li>
